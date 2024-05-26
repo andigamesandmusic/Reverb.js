@@ -1,0 +1,7 @@
+By OpenAirLib
+
+http://www.openairlib.net/auralizationdb/content/basement
+
+"My first attempt at creating an impulse. Basement is a wood shop, and has a nice sound. 9 positions. Shure SM57 and speaker were compensated for manually, so results may not be perfectly accurate, but it sounds all right to my ears. This is ORTF."
+
+License for this content: Public Domain Creative Commons license

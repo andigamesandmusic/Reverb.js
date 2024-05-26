@@ -1,0 +1,7 @@
+By OpenAirLib
+
+http://www.openairlib.net/auralizationdb/content/domestic-living-room
+
+"Domestic living room, recorded in front of speaker, at the back of the room, and in the adjacent room. Cutoff at 16kHz due to hardware constraints."
+
+License for this content: Public Domain Creative Commons license

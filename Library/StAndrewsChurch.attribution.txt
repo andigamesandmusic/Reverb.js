@@ -1,0 +1,7 @@
+By OpenAirLib (2004)
+http://www.openairlib.net/auralizationdb/content/st-andrews-church
+
+"St Andrew’s Church, built in the 14th Century, has one of the finest examples of in-situ acoustic jars (vases or pots) in the UK. These jars were common to European church construction in the late Middle Ages and are said to be based on the ideas of Roman architect Vitruvius, who discussed the use of resonant jars in the design of amphitheatres to provide clarity of voice presentation. They are designed as Helmholtz resonators, giving narrow band energy absorption according to the natural frequency of the jar although there is little conclusive acoustical evidence to show that they behave as designed. Studies suggest that the success or otherwise of these devices depends on the number of jars used and their placement, as well as the characteristics of the building and jars themselves. In anechoic and reverberant chambers the absorption effects of such jars are weak and highly selective, although can be significant below 200Hz. Together with their additional diffusive effects, the jars potentially help to eliminate strong normal modes and hence can be made effective with careful tuning and positioning. St Andrew’s Church has 11 jars placed high in the chancel, 6 in the north wall and 5 in the south, arranged at irregular intervals such that there are no directly opposite pairs."
+
+Attribution Share Alike Creative Commons
+http://creativecommons.org/licenses/by-sa/3.0/

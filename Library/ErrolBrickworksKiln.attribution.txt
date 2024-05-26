@@ -1,0 +1,7 @@
+By OpenAirLib
+
+http://www.openairlib.net/auralizationdb/content/errol-brickworks-errol-perth-and-kinross
+
+"Errol Brickworks situated on the outskirts of Errol Village, Perth and Kinross is now a Mackies potato crisps factory but two kilns remain. The works dates to 1870 and remained active until the mid nineties. The structure of the kilns looked like large brick built yurts, with the external walls below the dome strapped in metal casing. The internal dimensions are 6.5m to the height of the dome form the centre of the floor by 5.8m in diameter. Mackies staff allowed access to one of the kilns on the day of our visit. Two techniques were employed, a sine sweep recording using Apple's Impulse Response Utility software and a balloon pop recorded using a portable Alesis Palmtrack. Initially the reverberation characteristic appeared to be unremarkable having very little decay time, however upon wondering around inside the kiln a pronounced pre-delay was evident. Whilst standing close to the opposite wall from the entrance noise made by Paul near the entrance appeared to reverberate around the outside wall creating an effect similar to the whispering gallery found in the dome of St Paul's Cathedral in London, all be it more subtle."
+
+License for this content: Attribution Non-commercial Share Alike Creative Commons license

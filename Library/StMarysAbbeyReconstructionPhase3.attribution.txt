@@ -1,0 +1,7 @@
+By OpenAirLib
+
+http://www.openairlib.net/auralizationdb/content/st-marys-abbey-reconstruction
+
+"The abbey of St. Mary was mostly destroyed during the dissolution under the rule of Henry VIII and now only ruins remain. These ruins can be found in the Museum Gardens adjacent to the river Ouse in York city. Virtual models of this now derelict church were built using measurements taken from scaled plans and other sources of architectural evidence. Impulse responses were then created using ray-based room acoustic modelling software. Three different models of the church were used with increasing levels of detail in their geometric structure, referred to as Phase 1, Phase 2 and Phase 3. The work was carried out as part of a Bachelor of Engineering project at the Audiolab in the University of York."
+
+License for this content: Attribution Share Alike Creative Commons license

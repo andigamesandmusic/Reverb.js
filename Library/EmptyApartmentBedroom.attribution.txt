@@ -1,0 +1,7 @@
+By OpenAirLib
+
+http://www.openairlib.net/auralizationdb/content/empty-apartment-bedroom
+
+"An Impulse Response I recorded in the bedroom of an empty apartment close to my house. Recorded with an H4n, source was a handclap. Recorded at 96kHz/24-bit."
+
+License for this content: Public Domain Creative Commons license

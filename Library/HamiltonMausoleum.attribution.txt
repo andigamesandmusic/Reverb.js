@@ -1,0 +1,7 @@
+By OpenAirLib
+
+http://www.openairlib.net/auralizationdb/content/hamilton-mausoleum
+
+"Construction on the Hamilton Mausoleum, Hamilton, Scotland, built for the 10th Duke of Hamilton, started in 1842 and was completed in 1858. It is constructed of marble and sandstone and is surmounted by a dome 36m in height, with two main spaces, a crypt in the lower section, and a chapel that was supposed to be used for worship. However the construction materials, size, shape and dimensions of the latter result in a complex, dense and very long reverberation, and hence render it almost useless for speech presentation. In fact the Guinness Book of World Records claims that the Hamilton Mausoleum has the longest “echo” of any building, recorded on 27 May 1994 as taking 15s for the sound of the reverberation caused by slamming one of the main doors to die away to nothing. The space is now often used by recording musicians for its unique acoustic properties. The interior of Hamilton Mausoleum is approximately octagonal in plan, with a diameter of 18 m. Each side of the octagon is either a plane wall or a further semicircular alcove. The results presented below having the microphone assembly in the centre and the source placed to one side, just outside one of the alcoves, giving a source-receiver distance of 4.8 m."
+
+License for this content: Attribution Share Alike Creative Commons license

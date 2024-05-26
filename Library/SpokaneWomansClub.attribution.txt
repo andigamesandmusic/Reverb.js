@@ -1,0 +1,7 @@
+By OpenAirLib
+
+http://www.openairlib.net/auralizationdb/content/spokane-womans-club
+
+"The Spokane Woman's Club hall is a highly reflective space with bare walls, a hardwood floor and a curved ceiling. The space is roughly 84'x42' with an average ceiling height of about 16'. The sweep was recorded before an event and deconvolved with Voxengo's Deconvolver. The IR turned out very well. It allowed for seamless transition between the room sound recorded during a number of events, and the IR reverb used during post-production."
+
+License for this content: Attribution Creative Commons license

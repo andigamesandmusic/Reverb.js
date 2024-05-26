@@ -1,0 +1,83 @@
+#!/usr/bin/env ruby
+
+repo_dir = File.expand_path(File.dirname(__FILE__))
+
+if ARGV.length < 1
+  puts 'Usage: import_impulse_response [ir-audio-file] ...'
+  exit
+end
+
+def verbose(command)
+  puts "--> #{command}"
+  system(command)
+end
+
+def get_max_amplitude(file)
+  x = `sox #{file} -n stat 2>&1 | grep 'Volume adjustment' | sed 's/.*[:] *//g'`
+  return 1.0 / x.strip.to_f
+end
+
+ARGV.each do |in_file|
+  name = File.basename(in_file, File.extname(in_file))
+
+  wav = "#{repo_dir}/Library/#{name}.wav"
+  wav_base64 = "#{repo_dir}/Library/#{name}.wav.base64"
+  m4a = "#{repo_dir}/Library/#{name}.m4a"
+  m4a_base64 = "#{repo_dir}/Library/#{name}.m4a.base64"
+  attribution = "#{repo_dir}/Library/#{name}.attribution.txt"
+  
+  # We need to simulate the impulse response on a standard clip of audio and
+  # adjust the gain appropriately to help balance the collection as a whole.
+  # This means we need to do an actual convolution on the impulse response and
+  # audio data. To do this we'll leverage NumPy and SciPy, which can do a fast
+  # FFT convolve on raw data. To prepare for this, we'll get the data extracted
+  # in a raw format using the SoX utility.
+  
+  # Step 0) clean up any previous files
+  verbose('rm -f convolve_test*')
+  
+  # Step 1) create a version of the impulse response with these properties:
+  # 44.1KHz, 64-bit float, stereo, normalized
+  ir_norm = 'convolve_test_ir_norm.wav'
+  verbose("sox #{in_file} --norm -c 2 -r 44100 -e float -b 64 #{ir_norm}")
+  
+  # Step 2) split the impulse response into two raw channels
+  ir_raw_left = 'convolve_test_ir_left.raw'
+  verbose("sox #{ir_norm} #{ir_raw_left} remix 1")
+  ir_raw_right = 'convolve_test_ir_right.raw'
+  verbose("sox #{ir_norm} #{ir_raw_right} remix 2")
+  
+  # Step 3) create a version of the sample with these properties:
+  # 44.1KHz, 64-bit float, stereo, normalized
+  sample = "#{repo_dir}/Library/SampleBachCMinorPrelude.wav"
+  sample_norm = 'convolve_test_sample_norm.wav'
+  verbose("sox #{sample} --norm -c 2 -r 44100 -e float -b 64 #{sample_norm}")
+  
+  # Step 4) split the sample into two raw channels
+  sample_raw_left = 'convolve_test_sample_left.raw'
+  verbose("sox #{sample_norm} #{sample_raw_left} remix 1")
+  sample_raw_right = 'convolve_test_sample_right.raw'
+  verbose("sox #{sample_norm} #{sample_raw_right} remix 2")
+  
+  # Step 5) use Python convolve.py script to get the maximum and save final IR
+  ir_gain = get_max_amplitude(in_file)
+  puts "Calculating original IR gain: #{ir_gain}"
+  puts "Calculating gain balance using sample track..."
+  vol = (1.0 / `./convolve`.strip.to_f) / ir_gain
+  puts "Gain balance is: #{vol}"
+  verbose("sox #{in_file} -c 2 -r 44100 -e float -b 32 #{wav} vol #{vol}")
+  
+  # Step 6) cleanup any leftover files
+  verbose('rm -f convolve_test*')
+  
+  # Now create the AAC-encoded M4A version.
+  verbose("rm -f #{m4a}")
+  verbose("afconvert #{wav} -o #{m4a} -f m4af")
+
+  # Create base64 versions of above files.
+  verbose("openssl base64 -A -in #{wav} > #{wav_base64}")
+  verbose("openssl base64 -A -in #{m4a} > #{m4a_base64}")
+
+  # Touch the attribution file.
+  verbose("touch #{attribution}")
+end

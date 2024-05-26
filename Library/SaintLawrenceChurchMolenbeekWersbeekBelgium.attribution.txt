@@ -1,0 +1,7 @@
+By OpenAirLib
+
+http://www.openairlib.net/auralizationdb/content/saint-lawrence-church-molenbeek-wersbeek-belgium
+
+"This impulse response was made with a 4 sec sinesweep playing in the middle of the altar of the church with 2 spaced (70cm) omni DPA 4060 microphones in front of the altar. The recording was done in 96kHz 24bit."
+
+License for this content: Public Domain Creative Commons license

@@ -1,0 +1,76 @@
+#!/usr/bin/env ruby
+repo_dir = File.expand_path(File.dirname(__FILE__))
+Dir.chdir(repo_dir)
+
+def verbose(command)
+  puts "--> #{command}"
+  system(command) or raise("Failed: #{command}")
+end
+
+verbose('jslint --indent 2 --sloppy --stupid --evil reverb.js')
+verbose('uglifyjs reverb.js --compress > reverb.min.js')
+
+demo = File.read('index.html')
+
+generated = "<!--BEGIN GENERATED-->\n"
+Dir.glob('Library/*.m4a') {|file|
+  next if file.start_with?('Library/Sample')
+  url = 'http://reverbjs.org/' + file
+  name = File.basename(file, File.extname(file))
+  description = File.read('Library/' + name + '.attribution.txt')
+  x = ''
+  x += "<h2>#{name} "
+  x += '<a href="javascript:testReverb('
+  x += "'#{url}', 'scale'"
+  x += ');">'
+  x += "(synth)"
+  x += "</a> "
+  x += '<a href="javascript:testReverb('
+  x += "'#{url}', 'piece'"
+  x += ');">'
+  x += "(piano)"
+  x += "</a> "
+  x += '<a href="javascript:testReverb('
+  x += "'#{url}', 'stop'"
+  x += ');">'
+  x += "(stop)"
+  x += "</a>"
+  x += "</h2>\n"
+  x += "<h3>Attribution</h3>"
+  x += "<p>"
+  x += description.gsub("\n", "<br/>") + "\n"
+  x += "</p>\n"
+  x += "<h3>Usage</h3>\n"
+  x += "<pre><code>"
+  x += '&lt;script src="http://reverbjs.org/reverb.js"&gt;&lt;/script&gt;' + "\n"
+  x += '&lt;script&gt;' + "\n"
+  x += '// 1) Setup your audio context (once) and extend with Reverb.js.' + "\n"
+  x += 'var audioContext = new (window.AudioContext || window.webkitAudioContext)();' + "\n"
+  x += 'reverbjs.extend(audioContext);' + "\n"
+  x += '' + "\n"
+  x += '// 2) Load the impulse response; upon load, connect it to the audio output.' + "\n"
+  x += 'var reverbUrl = "' + url + '";' + "\n"
+  x += 'var reverbNode = audioContext.createReverbFromUrl(reverbUrl, function() {' + "\n"
+  x += '  reverbNode.connect(audioContext.destination);' + "\n"
+  x += '});' + "\n"
+  x += '' + "\n"
+  x += '// 3) Load a test sound; upon load, connect it to the reverb node.' + "\n"
+  x += 'var sourceUrl = "http://reverbjs.org/Library/SampleBachCMinorPrelude.m4a";' + "\n"
+  x += 'var sourceNode = audioContext.createSourceFromUrl(sourceUrl, function() {' + "\n"
+  x += '  sourceNode.connect(reverbNode);' + "\n"
+  x += '});' + "\n"
+  x += '&lt;/script&gt;' + "\n"
+  x += '&lt;a href="javascript:sourceNode.start()"&gt;Test&lt;/a&gt;' + "\n"
+  x += "</code></pre>\n"
+  generated += x
+}
+generated += "<!--END GENERATED-->"
+reverbjs = "<!--BEGIN REVERBJS-->\n"
+reverbjs += "<script type=\"text/javascript\">\n"
+reverbjs += File.read('reverb.js')
+reverbjs += "</script>"
+reverbjs += "<!--END REVERBJS-->"
+
+demo = demo.gsub(/[<].--BEGIN GENERATED.*END GENERATED--[>]/m) {generated}
+demo = demo.gsub(/[<].--BEGIN REVERBJS.*END REVERBJS--[>]/m) {reverbjs}
+File.write('index.html', demo)

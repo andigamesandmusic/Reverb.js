@@ -1,0 +1,7 @@
+By OpenAirLib
+
+http://www.openairlib.net/auralizationdb/content/st-patricks-church-patrington
+
+"St Patrick's Church in Patrington dates back to the medieval era and expresses the decorated design of English Gothic Churches of the early 14th century. It has a cruciform plan, with an external length of about 46 meters, a breadth of 27 meters and a height of 57.5 meters up to the very top of the central tower. These impulse responses were measured in the real world. 3 sets of measurements were recorded for 3 different source-reciever configurations (S1-R1, S2-R2 and S3-R3). The positions of these sources and receivers are described in the attached diagram."
+
+License for this content: Attribution Share Alike Creative Commons license

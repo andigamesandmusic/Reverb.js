@@ -1,0 +1,7 @@
+OpenAirLib
+
+http://www.openairlib.net/auralizationdb/content/lady-chapel-st-albans-cathedral
+
+"This data consists of 2 sets of impulse responses measured in the Lady Chapel at St Albans Cathedral. Measurements were taken at two different source and receiver positions, A and B. The positions of the sources and receivers for the two configurations, A and B, can be are described in the attached diagram. Each set consists of a 4 channel B-format response, a 2-channel ORTF stereo response, a 2-channel binaural stereo response and a 5-channel discrete microphone response (5.0) based on the Williams MMA microphone technique. Construction of the cathedral was started by the Normans in 1077 and hundreds of years of construction have resulted in a mixture of different architectural styles. The Lady Chapel is an example of architecture from the Decorated Gothic Period and was completed in 1327."
+
+License for this content: Attribution Share Alike Creative Commons license
